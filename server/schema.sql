@@ -4,6 +4,11 @@ CREATE DATABASE Users;
 
 USE Users;
 
+CREATE TABLE Countries (
+id int NOT NULL AUTO_INCREMENT, 
+country varchar(20)
+); 
+
 CREATE TABLE Users (
   id int NOT NULL AUTO_INCREMENT,
   name varchar(50),
@@ -15,14 +20,9 @@ CREATE TABLE Users (
   phone varchar(20),
   twitter varchar(50),
   facebook varchar(60),
-  username varchar(50)
-  id foreign key 
+  username varchar(50),
+  foreign key(location) references countries(id)
 );
-
-CREATE TABLE Countries (
-id int NOT NULL AUTO_INCREMENT, 
-country varchar(20)
-); 
 
 INSERT INTO Countries (country) VALUE ("Antartica
 ");
